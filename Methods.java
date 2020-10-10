@@ -146,4 +146,51 @@ public class Methods {
 
 		return sumdigits;
 	}
+
+	public String sameEnds(String string) {
+
+//		Given a string, return the longest substring that appears at both the beginning and end
+//		of the string without overlapping. For example, sameEnds("abXab") is "ab".
+//
+//		sameEnds("abXYab") → "ab"
+//		sameEnds("xx") → "x"
+//		sameEnds("xxx") → "x"
+		String sameends = "";
+		for ( int i = 0; i < string.length()/2; i++ ){
+			String frontSub = "";
+			if ( i == 0 ) frontSub = string.substring(0, 1);
+			else frontSub = string.substring(0, i+1);
+			String backSub = string.substring(string.length() - 1 - i);
+			if ( frontSub.equals(backSub) ) sameends = frontSub;
+		}
+
+		return sameends;
+	}
+
+	public String mirrorEnds(String string) {
+
+//		Given a string, look for a mirror image (backwards) string at both the beginning and end
+//		of the given string. In other words, zero or more characters at the very begining of the
+//		given string, and at the very end of the string in reverse order (possibly overlapping).
+//		For example, the string "abXYZba" has the mirror end "ab".
+//
+//		mirrorEnds("abXYZba") → "ab"
+//		mirrorEnds("abca") → "a"
+//		mirrorEnds("aba") → "aba"
+
+		String mirrorends = "";
+		int strLenDivTwo = string.length() / 2;
+		String gnirts = "";
+		for ( int i = string.length() - 1; i >= 0; i-- ){
+			gnirts += string.charAt(i);
+		}
+		if ( string.equals(gnirts) ) return string;
+		for ( int j = 0; j < strLenDivTwo; j++ ){
+			char stringChar = string.charAt(j);
+			char gnirtsChar = gnirts.charAt(j);
+			if ( stringChar != gnirtsChar ) return mirrorends;
+			else mirrorends += stringChar;
+		}
+		return mirrorends;
+	}
 }

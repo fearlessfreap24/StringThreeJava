@@ -37,9 +37,19 @@ public class String3 {
 //			System.out.printf("str = %s : %d : should be %s\n", strs[0], m.countTriple(strs[0]), strs[1] );
 //		}
 
-		String[][] strs6 = { {"aa1bc2d3", "6"}, {"aa11b33", "8"}, {"Chocolate", "0"} };
-		for ( String[] strs : strs6 ){
-			System.out.printf("str = %s : %d : should be %s\n", strs[0], m.sumDigits(strs[0]), strs[1]);
+//		String[][] strs6 = { {"aa1bc2d3", "6"}, {"aa11b33", "8"}, {"Chocolate", "0"} };
+//		for ( String[] strs : strs6 ){
+//			System.out.printf("str = %s : %d : should be %s\n", strs[0], m.sumDigits(strs[0]), strs[1]);
+//		}
+
+//		String[][] strs7 = { {"abXYab", "ab"}, {"xx", "x"}, {"xxx", "x"} };
+//		for ( String[] strs : strs7 ){
+//			System.out.printf("str = %s : %s : should be \"%s\"\n", strs[0], m.sameEnds(strs[0]), strs[1]);
+//		}
+
+		String[][] strs8 = { {"abXYZba", "ab"}, {"abca", "a"}, {"aba", "aba"} };
+		for ( String[] strs : strs8 ) {
+			System.out.printf("string = %s : %s : should be \"%s\"\n", strs[0], m.mirrorEnds(strs[0]), strs[1]);
 		}
 		
 	}
