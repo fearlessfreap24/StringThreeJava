@@ -193,4 +193,40 @@ public class Methods {
 		}
 		return mirrorends;
 	}
+
+	public int maxBlock(String str) {
+
+//		Given a string, return the length of the largest "block" in the string. A block is a
+//		run of adjacent chars that are the same.
+//
+//		maxBlock("hoopla") → 2
+//		maxBlock("abbCCCddBBBxx") → 3
+//		maxBlock("") → 0
+
+		int repeatCount = 1;
+		int maxblock = 0;
+
+		for ( int i = 0; i < str.length(); i++ ){
+//			char carati = str.charAt(i);
+			if ( i == 0 ) repeatCount = 1;
+			else if ( i > 0 & i < str.length() - 1){
+//				System.out.println(String.format("char at i = %s, char at i-1 = %s", str.charAt(i), str.charAt(i-1)));
+				if ( str.charAt(i) == str.charAt(i-1) ) repeatCount++;
+				else {
+					if ( repeatCount > maxblock ){
+						maxblock = repeatCount;
+					}
+					repeatCount = 1;
+				}
+			}
+			else {
+				if ( str.charAt(i) == str.charAt(i-1) ){
+					repeatCount++;
+				}
+				if ( repeatCount > maxblock ) maxblock = repeatCount;
+			}
+		}
+
+		return maxblock;
+	}
 }

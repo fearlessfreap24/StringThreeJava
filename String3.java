@@ -47,9 +47,14 @@ public class String3 {
 //			System.out.printf("str = %s : %s : should be \"%s\"\n", strs[0], m.sameEnds(strs[0]), strs[1]);
 //		}
 
-		String[][] strs8 = { {"abXYZba", "ab"}, {"abca", "a"}, {"aba", "aba"} };
-		for ( String[] strs : strs8 ) {
-			System.out.printf("string = %s : %s : should be \"%s\"\n", strs[0], m.mirrorEnds(strs[0]), strs[1]);
+//		String[][] strs8 = { {"abXYZba", "ab"}, {"abca", "a"}, {"aba", "aba"} };
+//		for ( String[] strs : strs8 ) {
+//			System.out.printf("string = %s : %s : should be \"%s\"\n", strs[0], m.mirrorEnds(strs[0]), strs[1]);
+//		}
+
+		String[][] strs9 = { {"hoopla", "2"}, {"abbCCCddBBBxx", "3"}, {"", "0"}, {"xyzz", "2"} };
+		for ( String[] strs : strs9 ){
+			System.out.printf("str = %s : should be %s : %d\n", strs[0], strs[1], m.maxBlock(strs[0]));
 		}
 		
 	}
