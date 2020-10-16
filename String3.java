@@ -52,9 +52,21 @@ public class String3 {
 //			System.out.printf("string = %s : %s : should be \"%s\"\n", strs[0], m.mirrorEnds(strs[0]), strs[1]);
 //		}
 
-		String[][] strs9 = { {"hoopla", "2"}, {"abbCCCddBBBxx", "3"}, {"", "0"}, {"xyzz", "2"} };
-		for ( String[] strs : strs9 ){
-			System.out.printf("str = %s : should be %s : %d\n", strs[0], strs[1], m.maxBlock(strs[0]));
+//		String[][] strs9 = { {"hoopla", "2"}, {"abbCCCddBBBxx", "3"}, {"", "0"}, {"xyzz", "2"} };
+//		for ( String[] strs : strs9 ){
+//			System.out.printf("str = %s : should be %s : %d\n", strs[0], strs[1], m.maxBlock(strs[0]));
+//		}
+		
+//		String[][] strs10 = { {"abc123xyz", "123"}, {"aa11b33", "44"}, {"7 11", "18"}, {"Chocolate", "0"}, {"", "0"} };
+//		for ( String[] strs : strs10 ) {
+//			System.out.printf("str = %s : should be %s : %d\n", strs[0], strs[1],
+//					m.sumNumbers(strs[0]));
+//		}
+		
+		String[][] strs11 = { {"is test", "is not test"}, {"is-is", "is not-is not"}, {"This is right", "This is not right"},
+				{"This is isabell", "This is not isabell"}, {"isis", "isis"} };
+		for ( String[] strs : strs11 ) {
+			System.out.printf("str = %s : should be \"%s\" : %s\n", strs[0], strs[1], m.notReplace(strs[0]));
 		}
 		
 	}

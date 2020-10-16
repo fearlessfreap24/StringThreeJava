@@ -229,4 +229,83 @@ public class Methods {
 
 		return maxblock;
 	}
+
+	public int sumNumbers(String str) {
+
+//		Given a string, return the sum of the numbers appearing in the string, ignoring all other characters. A number 
+//		is a series of 1 or more digit chars in a row. (Note: Character.isDigit(char) tests if a char is one of the 
+//		chars '0', '1', .. '9'. Integer.parseInt(string) converts a string to an int.)
+//
+//		sumNumbers("abc123xyz") → 123
+//		sumNumbers("aa11b33") → 44
+//		sumNumbers("7 11") → 18
+		
+		String nums = "0123456789";
+		String numStr = "";
+		for ( int i = 0; i < str.length(); i++ ) {
+			char strCharAti = str.charAt(i);
+			if ( nums.indexOf(strCharAti) >= 0 ) {
+				numStr += strCharAti;
+			}
+			else {
+				if ( numStr.length() > 0 && nums.indexOf(numStr.charAt(numStr.length() - 1)) >= 0 ) numStr += ",";
+			}
+		}
+		
+		int sumnumbers = 0;
+		if ( numStr.length() == 0 ) return sumnumbers;
+		String[] numStrSplit = numStr.split(",");
+		for ( int i = 0; i < numStrSplit.length; i++ ) {
+			sumnumbers += Integer.parseInt(numStrSplit[i]);
+		}
+		
+		return sumnumbers;
+	}
+
+	public String notReplace(String str) {
+
+//		Given a string, return a string where every appearance of the lowercase word "is" has been replaced with "is not". 
+//		The word "is" should not be immediately preceeded or followed by a letter -- so for example the "is" in "this" does 
+//		not count. (Note: Character.isLetter(char) tests if a char is a letter.)
+//
+//
+//		notReplace("is test") → "is not test"
+//		notReplace("is-is") → "is not-is not"
+//		notReplace("This is right") → "This is not right"
+		
+		String notreplace = "";
+//		if ( str.indexOf("is") < 0 ) return str;
+//		if ( str.length() < 2 ) return str;
+//		if ( str.length() == 2 && str.indexOf("is") == 0 ) return str + " not";
+//		if ( str.length() == 2 && str.indexOf("is") != 0 ) return str;
+		String spaceNot = " not";
+		
+		for ( int i = 0; i < str.length(); i++ ) {
+			String strSub = str.substring(i);
+			
+			if ( i == 0 && strSub.indexOf("is") == 0 
+					&& !Character.isLetter(str.charAt(2)) ) {
+				notreplace += "is" + spaceNot;
+				i = i+1;
+			}
+			else if ( i > 0 && i < str.length() - 2 
+					&& strSub.indexOf("is ") == 0 
+					&& !Character.isLetter(str.charAt(i-1))) {
+				notreplace += "is" + spaceNot;
+				i = i+1;
+			}
+			else if ( i == str.length() - 2 
+					&& strSub.indexOf("is") == 0 
+					&& !Character.isLetter(str.charAt(i-1))) {
+				notreplace += "is" + spaceNot;
+				i = i+1;
+			}
+			else notreplace += str.charAt(i);
+		}
+		
+//		notreplace += "is" + spaceNot;
+//		i = i+1;
+		
+		return notreplace;
+	}
 }
